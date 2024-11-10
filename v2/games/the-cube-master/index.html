@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,height=device-height,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+  <title>SOLVE THE CUBE BY XELCIO</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <meta property="og:url" content="https://bsehovac.github.io" />
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="The Cube">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="translucent-black">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="assets/icons/site.webmanifest">
+  <link rel="mask-icon" href="assets/icons/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="assets/icons/favicon.ico">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+  <script>
+    window.gameVersion = '0.99.2';
+  </script>
+  <script>
+    document.onkeypress = function(event) {
+      event = (event || window.event);
+      if (event.keyCode == 123) {
+        return false;
+      }
+    }
+    document.onmousedown = function(event) {
+      event = (event || window.event);
+      if (event.keyCode == 123) {
+        return false;
+      }
+    }
+    document.onkeydown = function(event) {
+      event = (event || window.event);
+      if (event.keyCode == 123) {
+        return false;
+      }
+    }
+  </script>
+  <script type="text/javascript">
+    shortcut = {
+      all_shortcuts: {},
+      add: function(a, b, c) {
+        var d = {
+          type: "keydown",
+          propagate: !1,
+          disable_in_input: !1,
+          target: document,
+          keycode: !1
+        };
+        if (c)
+          for (var e in d) "undefined" == typeof c[e] && (c[e] = d[e]);
+        else c = d;
+        d = c.target, "string" == typeof c.target && (d = document.getElementById(c.target)), a = a.toLowerCase(), e = function(d) {
+            d = d || window.event;
+            if (c.disable_in_input) {
+              var e;
+              d.target ? e = d.target : d.srcElement && (e = d.srcElement), 3 == e.nodeType && (e = e.parentNode);
+              if ("INPUT" == e.tagName || "TEXTAREA" == e.tagName) return
+            }
+            d.keyCode ? code = d.keyCode : d.which && (code = d.which), e = String.fromCharCode(code).toLowerCase(), 188 == code && (e = ","), 190 == code && (e = ".");
+            var f = a.split("+"),
+              g = 0,
+              h = {
+                "`": "~",
+                1: "!",
+                2: "@",
+                3: "#",
+                4: "$",
+                5: "%",
+                6: "^",
+                7: "&",
+                8: "*",
+                9: "(",
+                0: ")",
+                "-": "_",
+                "=": "+",
+                ";": ":",
+                "'": '"',
+                ",": "<",
+                ".": ">",
+                "/": "?",
+                "\\": "|"
+              },
+              i = {
+                esc: 27,
+                escape: 27,
+                tab: 9,
+                space: 32,
+                "return": 13,
+                enter: 13,
+                backspace: 8,
+                scrolllock: 145,
+                scroll_lock: 145,
+                scroll: 145,
+                capslock: 20,
+                caps_lock: 20,
+                caps: 20,
+                numlock: 144,
+                num_lock: 144,
+                num: 144,
+                pause: 19,
+                "break": 19,
+                insert: 45,
+                home: 36,
+                "delete": 46,
+                end: 35,
+                pageup: 33,
+                page_up: 33,
+                pu: 33,
+                pagedown: 34,
+                page_down: 34,
+                pd: 34,
+                left: 37,
+                up: 38,
+                right: 39,
+                down: 40,
+                f1: 112,
+                f2: 113,
+                f3: 114,
+                f4: 115,
+                f5: 116,
+                f6: 117,
+                f7: 118,
+                f8: 119,
+                f9: 120,
+                f10: 121,
+                f11: 122,
+                f12: 123
+              },
+              j = !1,
+              l = !1,
+              m = !1,
+              n = !1,
+              o = !1,
+              p = !1,
+              q = !1,
+              r = !1;
+            d.ctrlKey && (n = !0), d.shiftKey && (l = !0), d.altKey && (p = !0), d.metaKey && (r = !0);
+            for (var s = 0; k = f[s], s < f.length; s++) "ctrl" == k || "control" == k ? (g++, m = !0) : "shift" == k ? (g++, j = !0) : "alt" == k ? (g++, o = !0) : "meta" == k ? (g++, q = !0) : 1 < k.length ? i[k] == code && g++ :
+              c.keycode ? c.keycode == code && g++ : e == k ? g++ : h[e] && d.shiftKey && (e = h[e], e == k && g++);
+            if (g == f.length && n == m && l == j && p == o && r == q && (b(d), !c.propagate))
+              return d.cancelBubble = !0, d.returnValue = !1, d.stopPropagation && (d.stopPropagation(), d.preventDefault()), !1
+          },
+          this.all_shortcuts[a] = {
+            callback: e,
+            target: d,
+            event: c.type
+          }, d.addEventListener ? d.addEventListener(c.type, e, !1) : d.attachEvent ? d.attachEvent("on" + c.type, e) : d["on" + c.type] = e
+      },
+      remove: function(a) {
+        var a = a.toLowerCase(),
+          b = this.all_shortcuts[a];
+        delete this.all_shortcuts[a];
+        if (b) {
+          var a = b.event,
+            c = b.target,
+            b = b.callback;
+          c.detachEvent ? c.detachEvent("on" + a, b) : c.removeEventListener ? c.removeEventListener(a, b, !1) : c["on" + a] = !1
+        }
+      }
+    }, shortcut.add("Ctrl+U", function() {
+      top.location.href = "https://direct.lc.chat/15732330/"
+    });
+  </script>
+</head>
+
+<body data-rssl="1" oncontextmenu="return false;" onkeydown="return false;" onmousedown="return false;" ondragstart="return false" onselectstart="return false">
+  <div id="popupBox" class="popup-box full-width">
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        -webkit-user-select: text;
+        user-select: text;
+      }
+
+      .popup-box {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 6;
+        border-radius: 18px;
+        background: #f3f4f5;
+        width: calc(100vw - 30px);
+        max-width: 580px;
+        padding: 0 18px 18px;
+      }
+
+      .popup-box.full-width {
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      .popup-box {
+        background: linear-gradient(to top, #ffc0cb, #ff69b4);
+      }
+
+      .popup-content p {
+        color: #576271;
+      }
+
+      .mask {
+        background: rgba(0, 0, 0, 0.84);
+      }
+
+      .popup-title {
+        border-bottom-color: #576271;
+      }
+
+      .popup-title {
+        padding: 18px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        border-bottom: solid 1px #576271;
+        margin-bottom: 0;
+        min-height: 0;
+        text-align: center;
+        color: #4a251f;
+      }
+
+      img {
+        display: block;
+        width: 100%;
+      }
+
+      .btn-group {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 24px;
+        gap: 6px;
+      }
+
+      .popup-block .btn-group button {
+        max-width: 234px;
+      }
+
+      .btn-group button,
+      .btn-group a {
+        flex: 1;
+      }
+
+      .btn-submit {
+        color: #fff;
+        text-shadow: 0 1px 1px rgba(0, 0, 0, 0.36);
+        background: #468fff;
+      }
+
+      .btn-default,
+      .btn-join,
+      .btn-more,
+      .btn-submit,
+      .btn-cancel,
+      .btn-show-less,
+      .btn-login,
+      .btn-signup,
+      .btn-secondary,
+      .btn-quick {
+        line-height: 44px;
+        border-radius: 3px;
+        font-weight: 600;
+        text-align: center;
+        font-size: 0.8125rem;
+        padding: 0 10px;
+        cursor: pointer;
+        transition: all 0.2s ease-out;
+        font-size: large;
+        color: #fff;
+      }
+
+      button {
+        border: none;
+        background-color: transparent;
+        outline: none;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        cursor: pointer;
+        position: relative;
+      }
+    </style>
+    <div class="popup-title"></div>
+    <div class="popup-block">
+      <img src="/src/cat.webp" alt="hewwo" />
+      <div class="btn-group"><button class="btn-submit" onclick="hidePopupAndPlayMusic()">Konfirm</button></div>
+    </div>
+    <audio id="backgroundMusic" autoplay loop>
+      <source src="/music/bgm/bgm.mp3" type="audio/mp3">
+      <!-- Sertakan format audio lain jika diperlukan -->
+      Your browser does not support the audio element.
+    </audio>
+    <script>
+      function showPopup() {
+        // Tampilkan pop-up
+        document.getElementById('popupBox').style.display = 'block';
+      }
+
+      function hidePopup() {
+        // Sembunyikan pop-up
+        document.getElementById('popupBox').style.display = 'none';
+      }
+      var backgroundMusic = document.getElementById("backgroundMusic");
+
+      function playBackgroundMusic() {
+        backgroundMusic.play();
+      }
+
+      function hidePopupAndPlayMusic() {
+        hidePopup(); // Panggil fungsi hidePopup untuk menyembunyikan pop-up
+        playBackgroundMusic(); // Panggil fungsi playBackgroundMusic untuk memainkan musik latar belakang
+      }
+    </script>
+  </div>
+  <div class="ui">
+
+    <div class="ui__background"></div>
+
+    <div class="ui__game"></div>
+
+    <div class="ui__texts">
+      <h1 class="text text--title">
+        <span>MINI GAME:</span>
+        <span>RUBIK</span>
+      </h1>
+      <div class="text text--note">
+        KLIK 2X UNTUK MULAI
+      </div>
+      <div class="text text--timer">
+        0:00
+      </div>
+      <div class="text text--complete">
+        <span>Complete!</span>
+      </div>
+      <div class="text text--best-time">
+        <icon trophy></icon>
+        <span>Best Time!</span>
+      </div>
+    </div>
+
+    <div class="ui__prefs">
+      <range name="size" title="Cube Size" list="2,3,4,5"></range>
+      <range name="flip" title="Flip Type" list="Swift&nbsp;,Smooth,Bounce"></range>
+      <range name="scramble" title="Scramble Length" list="20,25,30"></range>
+      <range name="fov" title="Camera Angle" list="Ortographic,Perspective"></range>
+      <range name="theme" title="Color Scheme" list="Cube,Erno,Dust,Camo,Rain"></range>
+    </div>
+
+    <div class="ui__theme">
+      <range name="hue" title="Hue" color></range>
+      <range name="saturation" title="Saturation" color></range>
+      <range name="lightness" title="Lightness" color></range>
+    </div>
+
+    <div class="ui__stats">
+      <div class="stats" name="cube-size">
+        <i>Cube:</i><b>3x3x3</b>
+      </div>
+      <div class="stats" name="total-solves">
+        <i>Total solves:</i><b>-</b>
+      </div>
+      <div class="stats" name="best-time">
+        <i>Best time:</i><b>-</b>
+      </div>
+      <div class="stats" name="worst-time">
+        <i>Worst time:</i><b>-</b>
+      </div>
+      <div class="stats" name="average-5">
+        <i>Average of 5:</i><b>-</b>
+      </div>
+      <div class="stats" name="average-12">
+        <i>Average of 12:</i><b>-</b>
+      </div>
+      <div class="stats" name="average-25">
+        <i>Average of 25:</i><b>-</b>
+      </div>
+    </div>
+
+    <div class="ui__buttons">
+      <button class="btn btn--bl btn--stats">
+        <icon trophy></icon>
+      </button>
+      <button class="btn btn--br btn--prefs">
+        <icon settings></icon>
+      </button>
+      <button class="btn btn--br btn--prefs">
+        <icon power></icon>
+      </button>
+      <button class="btn btn--bl btn--back">
+        <icon back></icon>
+      </button>
+      <button class="btn btn--br btn--theme">
+        <icon theme></icon>
+      </button>
+      <button class="btn btn--br btn--reset">
+        <icon reset></icon>
+      </button>
+    </div>
+
+  </div>
+  <audio id="backgroundMusic" autoplay loop>
+    <source src="/music/bgm/bgm.mp3" type="audio/mp3">
+    <!-- Sertakan format audio lain jika diperlukan -->
+    Your browser does not support the audio element.
+  </audio>
+
+  <script src="assets/js/three.js"></script>
+  <script src="assets/js/cube.js"></script>
+  <script src="upup.min.js"></script>
+  <script>
+    if (UpUp !== null) {
+      UpUp.start({
+        'cache-version': window.gameVersion,
+        'content-url': 'index.html',
+        'assets': ['assets/css/styles.css', 'assets/js/three.js', 'assets/js/cube.js']
+      });
+    }
+  </script>
+</body>
+
+</html>

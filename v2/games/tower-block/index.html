@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,user-scalable=no">
+  <title>Tower Blocks</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="shortcut icon" href="https://www.svgrepo.com/show/513578/stack.svg">
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://codepen.io/steveg3003/pen/zBVakw.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r83/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+</head>
+
+<body>
+  <div id="popupBox" class="popup-box full-width">
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        -webkit-user-select: text;
+        user-select: text;
+      }
+
+      .popup-box {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 6;
+        border-radius: 18px;
+        background: #f3f4f5;
+        width: calc(100vw - 30px);
+        max-width: 580px;
+        padding: 0 18px 18px;
+      }
+
+      .popup-box.full-width {
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      .popup-box {
+        background: linear-gradient(to top, #ffc0cb, #ff69b4);
+      }
+
+      .popup-content p {
+        color: #576271;
+      }
+
+      .mask {
+        background: rgba(0, 0, 0, 0.84);
+      }
+
+      .popup-title {
+        border-bottom-color: #576271;
+      }
+
+      .popup-title {
+        padding: 18px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        border-bottom: solid 1px #576271;
+        margin-bottom: 0;
+        min-height: 0;
+        text-align: center;
+        color: #4a251f;
+      }
+
+      img {
+        display: block;
+        width: 100%;
+      }
+
+      .btn-group {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 24px;
+        gap: 6px;
+      }
+
+      .popup-block .btn-group button {
+        max-width: 234px;
+      }
+
+      .btn-group button,
+      .btn-group a {
+        flex: 1;
+      }
+
+      .btn-submit {
+        color: #fff;
+        text-shadow: 0 1px 1px rgba(0, 0, 0, 0.36);
+        background: #468fff;
+      }
+
+      .btn-default,
+      .btn-join,
+      .btn-more,
+      .btn-submit,
+      .btn-cancel,
+      .btn-show-less,
+      .btn-login,
+      .btn-signup,
+      .btn-secondary,
+      .btn-quick {
+        line-height: 44px;
+        border-radius: 3px;
+        font-weight: 600;
+        text-align: center;
+        font-size: 0.8125rem;
+        padding: 0 10px;
+        cursor: pointer;
+        transition: all 0.2s ease-out;
+        font-size: large;
+        color: #fff;
+      }
+
+      button {
+        border: none;
+        background-color: transparent;
+        outline: none;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        cursor: pointer;
+        position: relative;
+      }
+    </style>
+    <div class="popup-title"></div>
+    <div class="popup-block">
+      <img src="/src/cat.webp" alt="hewwo" />
+      <div class="btn-group"><button class="btn-submit" onclick="hidePopupAndPlayMusic()">Konfirm</button></div>
+    </div>
+    <audio id="backgroundMusic" autoplay loop>
+      <source src="/music/bgm/bgm.mp3" type="audio/mp3">
+      <!-- Sertakan format audio lain jika diperlukan -->
+      Your browser does not support the audio element.
+    </audio>
+    <script>
+      function showPopup() {
+        // Tampilkan pop-up
+        document.getElementById('popupBox').style.display = 'block';
+      }
+
+      function hidePopup() {
+        // Sembunyikan pop-up
+        document.getElementById('popupBox').style.display = 'none';
+      }
+      var backgroundMusic = document.getElementById("backgroundMusic");
+
+      function playBackgroundMusic() {
+        backgroundMusic.play();
+      }
+
+      function hidePopupAndPlayMusic() {
+        hidePopup(); // Panggil fungsi hidePopup untuk menyembunyikan pop-up
+        playBackgroundMusic(); // Panggil fungsi playBackgroundMusic untuk memainkan musik latar belakang
+      }
+    </script>
+  </div>
+  <div id="container">
+    <div id="game"></div>
+    <div id="score">0</div>
+    <div id="instructions">Click (or press the spacebar) to place the block</div>
+    <div class="game-over">
+      <h2>Game Over</h2>
+      <p>You did great, you're the best.</p>
+      <p>Click or spacebar to start again</p>
+    </div>
+    <div class="game-ready">
+      <div id="start-button">Start</div>
+      <div></div>
+    </div>
+  </div>
+
+  <script src="system.js"></script>
+</body>
+
+</html>

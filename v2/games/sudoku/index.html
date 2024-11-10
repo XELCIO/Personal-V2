@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>사랑하려는 시도</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="description" content="21. Twenty One years of kindness, charm, and hope. What a journey (so far)">
+  <link rel="icon" href="https://www.svgrepo.com/show/210347/sudoku.svg">
+  <link rel="stylesheet" href="/games/sudoku/style.css">
+  <link rel="stylesheet" href="/games/sudoku/popup.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+</head>
+
+<body>
+  <div id="popupBox" class="popup-box full-width">
+    <div class="popup-title"></div>
+    <div class="popup-block">
+      <img src="https://media.tenor.com/wkzCX9s5kxQAAAAi/0906-peacegoma.gif">
+      <div class="btn-group"><button class="btn-submit" onclick="hidePopupAndPlayMusic()">Konfirm</button></div>
+    </div>
+  </div>
+  <a href="#" id="sidebar-toggle" onload="playBackgroundMusic()">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </a>
+
+  <h1 id="sudoku_title">SUDOKU</h1>
+
+  <div id="sudoku_menu">
+    <ul>
+      <li><a class="restart" href="#">New Game</a></li>
+      <li></li>
+    </ul>
+  </div>
+
+  <div id="sudoku_container"></div>
+  <audio id="backgroundMusic" autoplay loop>
+    <source src="/music/bgm/bgm.mp3" type="audio/mp3">
+    <!-- Sertakan format audio lain jika diperlukan -->
+    Your browser does not support the audio element.
+  </audio>
+
+  <script src="/games/sudoku/main.js"></script>
+</body>

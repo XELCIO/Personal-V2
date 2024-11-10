@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0" />
+  <title></title>
+  <meta name="description" content="" />
+  <link rel="icon" href="" />
+  <link rel="stylesheet" href="/v2/src/css/styling.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+</head>
+
+<body>
+  <div id="particles-js" class="snow"></div>
+  <div id="popupBox" class="popup-box full-width">
+    <style>
+      :root {
+        --clr-text: hsl(0, 0%, 100%);
+        --m: 4rem;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        -webkit-user-select: text;
+        user-select: text;
+      }
+
+      .popup-box {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 6;
+        border-radius: 18px;
+        background: #f3f4f5;
+        width: calc(100vw - 30px);
+        max-width: 580px;
+        padding: 0 18px 18px;
+      }
+
+      .popup-box.full-width {
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      .popup-box {
+        background: rgba(172, 172, 172, 0.2);
+        box-shadow: 2px 2px 10px 2px hsl(0, 0%, 0%, 0.25);
+        backdrop-filter: blur(10px);
+        border-radius: 10px;
+      }
+
+      .popup-content p {
+        color: #576271;
+      }
+
+      .mask {
+        background: rgba(0, 0, 0, 0.84);
+      }
+
+      .popup-title {
+        border-bottom-color: #576271;
+      }
+
+      .popup-title {
+        padding: 18px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        border-bottom: solid 1px #576271;
+        margin-bottom: 0;
+        min-height: 0;
+        text-align: center;
+        color: #4a251f;
+      }
+
+      .popup-img {
+        display: block;
+        width: 100%;
+      }
+
+      .btn-group {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 24px;
+        gap: 6px;
+      }
+
+      .popup-block .btn-group button {
+        max-width: 234px;
+      }
+
+      .btn-group button,
+      .btn-group a {
+        flex: 1;
+      }
+
+      .btn-submit {
+        text-shadow: 0 1px 1px rgba(0, 0, 0, 0.36);
+        background: rgba(248, 132, 169, 0.7);
+        ;
+      }
+
+      .btn-default,
+      .btn-join,
+      .btn-more,
+      .btn-submit,
+      .btn-cancel,
+      .btn-show-less,
+      .btn-login,
+      .btn-signup,
+      .btn-secondary,
+      .btn-quick {
+        line-height: 44px;
+        border-radius: 3px;
+        font-weight: 600;
+        text-align: center;
+        font-size: 0.8125rem;
+        padding: 0 10px;
+        cursor: pointer;
+        transition: all 0.2s ease-out;
+        font-size: large;
+        color: #fff;
+      }
+
+      button {
+        border: none;
+        background-color: transparent;
+        outline: none;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        cursor: pointer;
+        position: relative;
+      }
+    </style>
+    <div class="popup-title"></div>
+    <div class="popup-block">
+      <img class="popup-img" src="/v2/src/img/cat.webp" alt="hewwo" />
+      <div class="btn-group"><button class="btn-submit" onclick="hidePopupAndPlayMusic()">Konfirm</button></div>
+    </div>
+    <audio id="backgroundMusic" autoplay loop>
+      <source src="/v2/src/music/The Beginning.mp3" type="audio/mp3">
+      <!-- Sertakan format audio lain jika diperlukan -->
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+  <section>
+    <div class="recipe-container">
+      <h1>Mini Games</h1>
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide post">
+            <img class="post-img" src="https://shots.codepen.io/username/pen/XWvRYwJ-512.webp?version=1729385044" alt="Music Player" />
+
+            <div class="post-body">
+              <img class="post-avatar" src="/v2/src/svg/music-player.svg" alt="Music Player" />
+              <div class="post-detail">
+                <h2 class="post-name" onclick="redirectToMusic()">Xelcio</h2>
+                <p class="post-author">Places</p>
+              </div>
+
+              <div class="post-actions">
+                <a class="post-like" href="javascript:void(0)"><i class="fas fa-heart"></i></a>
+                <button class="post-actions-controller" data-target="post6" aria-controls="post-actions-content" aria-expanded="false">
+                  <i class="fa-solid fa-ellipsis fa-2xl"></i>
+                </button>
+                <div class="post-actions-content" id="post6" data-visible="false" aria-hidden="true">
+                  <ul role="list" class="grid-flow" data-spacing="small">
+                    <li onclick="redirectToMusic()">
+                      <a class="post-actions-link" href="/music-player.html">
+                        <i class="fa-solid fa-gamepad"></i>
+                        <span>Play</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="post-actions-link" href="https://t.me/Xelcio">
+                        <i class="fa-solid fa-message"></i>
+                        <span>Report Bug/Error</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="post-actions-link" href="https://heylink.me/xelcio/">
+                        <i class="fa-solid fa-user-plus"></i>
+                        <span>Follow my socials</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide post">
+            <img class="post-img" src="/v2/src/img/preview/rubik-preview.jpeg" alt="Rubik" />
+
+            <div class="post-body">
+              <img class="post-avatar" src="https://raw.githubusercontent.com/XELCIO/personal/main/games/the-cube-master/assets/icons/android-chrome-192x192.png" alt="avatar" />
+              <div class="post-detail">
+                <h2 class="post-name" onclick="redirectToCube()">The Cube</h2>
+                <p class="post-author">Custom Rubik Game</p>
+              </div>
+
+              <div class="post-actions">
+                <a class="post-like" href="javascript:void(0)"><i class="fas fa-heart"></i></a>
+                <button class="post-actions-controller" data-target="post1" aria-controls="post-actions-content" aria-expanded="false">
+                  <i class="fa-solid fa-ellipsis fa-2xl"></i>
+                </button>
+                <div class="post-actions-content" id="post1" data-visible="false" aria-hidden="true">
+                  <ul role="list" class="grid-flow" data-spacing="small">
+                    <li onclick="redirectToCube()">
+                      <a class="post-actions-link" href="/games/the-cube-master/index.html">
+                        <i class="fa-solid fa-gamepad"></i>
+                        <span>Play</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="post-actions-link" href="https://t.me/Xelcio">
+                        <i class="fa-solid fa-message"></i>
+                        <span>Report Bug/Error</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="post-actions-link" href="https://heylink.me/xelcio/">
+                        <i class="fa-solid fa-user-plus"></i>
+                        <span>Follow my socials</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide post">
+            <img class="post-img" src="/v2/src/img/preview/2048-preview.jpeg" alt="2048" />
+
+            <div class="post-body">
+              <img class="post-avatar" src="https://i.pinimg.com/564x/13/f5/0c/13f50c80a451c7d070d4f2d8f59843c3.jpg" alt="avatar" />
+              <div class="post-detail">
+                <h2 class="post-name" onclick="redirectTo2048()">2048</h2>
+                <p class="post-author">Simple 2048 game</p>
+              </div>
+
+              <div class="post-actions">
+                <a class="post-like" href="javascript:void(0)"><i class="fas fa-heart"></i></a>
+                <button class="post-actions-controller" data-target="post2" aria-controls="post-actions-content" aria-expanded="false">
+                  <i class="fa-solid fa-ellipsis fa-2xl"></i>
+                </button>
+                <div class="post-actions-content" id="post2" data-visible="false" aria-hidden="true">
+                  <ul role="list" class="grid-flow" data-spacing="small">
+                    <li onclick="redirectTo2048()">
+                      <a class="post-actions-link" href="/games/2048/index.html">
+                        <i class="fa-solid fa-gamepad"></i>
+                        <span>Play</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="post-actions-link" href="https://t.me/Xelcio">
+                        <i class="fa-solid fa-message"></i>
+                        <span>Report Bug/Error</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="post-actions-link" href="https://heylink.me/xelcio/">
+                        <i class="fa-solid fa-user-plus"></i>
+                        <span>Follow my socials</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide post">
+            <img class="post-img" src="/v2/src/img/preview/ttc-preview.jpeg" alt="TicTacToe" />
+
+            <div class="post-body">
+              <img class="post-avatar" src="https://www.svgrepo.com/show/288296/tic-tac-toe.svg" alt="avatar" />
+              <div class="post-detail">
+                <h2 class="post-name" onclick="redirectToTicTacToe()">Tic-Tac-Toe</h2>
+                <p class="post-author">Multiplayer</p>
+              </div>
+
+              <div class="post-actions">
+                <a class="post-like" href="javascript:void(0)"><i class="fas fa-heart"></i></a>
+                <button class="post-actions-controller" data-target="post3" aria-controls="post-actions-content" aria-expanded="false">
+                  <i class="fa-solid fa-ellipsis fa-2xl"></i>
+                </button>
+                <div class="post-actions-content" id="post3" data-visible="false" aria-hidden="true">
+                  <ul role="list" class="grid-flow" data-spacing="small">
+                    <li onclick="redirectToTicTacToe()">
+                      <a class="post-actions-link" href="/games/tic-tac-toe/index.html">
+                        <i class="fa-solid fa-gamepad"></i>
+                        <span>Play</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="post-actions-link" href="https://t.me/Xelcio">
+                        <i class="fa-solid fa-message"></i>
+                        <span>Report Bug/Error</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="post-actions-link" href="https://heylink.me/xelcio/">
+                        <i class="fa-solid fa-user-plus"></i>
+                        <span>Follow my socials</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide post">
+            <img class="post-img" src="/v2/src/img/preview/sdk-preview.jpeg" alt="Sudoku" />
+
+            <div class="post-body">
+              <img class="post-avatar" src="https://www.svgrepo.com/show/210347/sudoku.svg" alt="avatar" />
+              <div class="post-detail">
+                <h2 class="post-name" onclick="redirectToSudoku()">Sudoku</h2>
+                <p class="post-author">Intermediate level</p>
+              </div>
+
+              <div class="post-actions">
+                <a class="post-like" href="javascript:void(0)"><i class="fas fa-heart"></i></a>
+                <button class="post-actions-controller" data-target="post4" aria-controls="post-actions-content" aria-expanded="false">
+                  <i class="fa-solid fa-ellipsis fa-2xl"></i>
+                </button>
+                <div class="post-actions-content" id="post4" data-visible="false" aria-hidden="true">
+                  <ul role="list" class="grid-flow" data-spacing="small">
+                    <li onclick="redirectToSudoku()">
+                      <a class="post-actions-link" href="/games/sudoku/index.html">
+                        <i class="fa-solid fa-gamepad"></i>
+                        <span>Play</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="post-actions-link" href="https://t.me/Xelcio">
+                        <i class="fa-solid fa-message"></i>
+                        <span>Report Bug/Error</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="post-actions-link" href="https://heylink.me/xelcio/">
+                        <i class="fa-solid fa-user-plus"></i>
+                        <span>Follow my socials</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide post">
+            <img class="post-img" src="/v2/src/img/preview/tower-preview.jpeg" alt="Tower" />
+
+            <div class="post-body">
+              <img class="post-avatar" src="https://www.svgrepo.com/show/476763/stack.svg" alt="avatar" />
+              <div class="post-detail">
+                <h2 class="post-name" onclick="redirectToTowerBlock()">Tower Block</h2>
+                <p class="post-author">Endless tower block</p>
+              </div>
+
+              <div class="post-actions">
+                <a class="post-like" href="javascript:void(0)"><i class="fas fa-heart"></i></a>
+                <button class="post-actions-controller" data-target="post5" aria-controls="post-actions-content" aria-expanded="false">
+                  <i class="fa-solid fa-ellipsis fa-2xl"></i>
+                </button>
+                <div class="post-actions-content" id="post5" data-visible="false" aria-hidden="true">
+                  <ul role="list" class="grid-flow" data-spacing="small">
+                    <li onclick="redirectToTowerBlock()">
+                      <a class="post-actions-link" href="/games/tower-block/index.html">
+                        <i class="fa-solid fa-gamepad"></i>
+                        <span>Play</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="post-actions-link" href="https://t.me/Xelcio">
+                        <i class="fa-solid fa-message"></i>
+                        <span>Report Bug/Error</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="post-actions-link" href="https://heylink.me/xelcio/">
+                        <i class="fa-solid fa-user-plus"></i>
+                        <span>Follow my socials</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide post">
+            <img class="post-img" src="https://raw.githubusercontent.com/XELCIO/personal/refs/heads/main/src/xelcio.jpeg" alt="Xelcio" />
+
+            <div class="post-body">
+              <img class="post-avatar" src="/v2/src/img/xelcio.jpeg" alt="avatar" />
+              <div class="post-detail">
+                <h2 class="post-name" onclick="redirectToSliders()">Xelcio</h2>
+                <p class="post-author">Places</p>
+              </div>
+
+              <div class="post-actions">
+                <a class="post-like" href="javascript:void(0)"><i class="fas fa-heart"></i></a>
+                <button class="post-actions-controller" data-target="post6" aria-controls="post-actions-content" aria-expanded="false">
+                  <i class="fa-solid fa-ellipsis fa-2xl"></i>
+                </button>
+                <div class="post-actions-content" id="post6" data-visible="false" aria-hidden="true">
+                  <ul role="list" class="grid-flow" data-spacing="small">
+                    <li onclick="redirectToSliders()">
+                      <a class="post-actions-link" href="/others/sliders/index.html">
+                        <i class="fa-solid fa-gamepad"></i>
+                        <span>Play</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="post-actions-link" href="https://t.me/Xelcio">
+                        <i class="fa-solid fa-message"></i>
+                        <span>Report Bug/Error</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="post-actions-link" href="https://heylink.me/xelcio/">
+                        <i class="fa-solid fa-user-plus"></i>
+                        <span>Follow my socials</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-scrollbar"></div>
+      </div>
+    </div>
+  </section>
+  <footer id="footer">
+    <div class="col col1">
+      <p>Made with <span style="color: #BA6573;">❤</span> by Xelcio</p>
+      <div class="social">
+        <a href="https://codepen.io/Xelciolous" target="_blank" class="link"><img class="img-footer" src="https://assets.codepen.io/9051928/codepen_1.png" alt="Codepen" /></a>
+        <a href="https://t.me/xelcio" target="_blank" class="link"><img class="img-footer" src="https://raw.githubusercontent.com/XELCIO/personal/c271a1d556ba6a5818cb6087f3e3305cc418c70a/src/telegram.svg" alt="Telegram" /></a>
+        <a href="https://heylink.me/xelcio" target="_blank" class="link"><img class="img-footer" src="https://raw.githubusercontent.com/XELCIO/personal/c271a1d556ba6a5818cb6087f3e3305cc418c70a/src/contact.svg" alt="Contact" /></a>
+      </div>
+      <p style="color: #818181; font-size: smaller">2024 © All Rights Reserved</p>
+    </div>
+  </footer>
+  <script src="/v2/src/js/control.js"></script>
+</body>
+
+</html>
