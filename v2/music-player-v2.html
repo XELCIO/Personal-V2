@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0" />
+  <title>People Changes, and so do us.</title>
+  <meta name="description" content="For the better or worse, it's inevitable. Cheers to us." />
+  <link rel="icon" href="https://raw.githubusercontent.com/XELCIO/Personal-V2/main/assets/love-svgrepo-com.svg" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="/v2/src/css/appearance.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.js"></script>
+</head>
+
+<body>
+  <div id="particles-js" class="snow"></div>
+  <div class="album-cover">
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="https://raw.githubusercontent.com/XELCIO/personal/refs/heads/main/src/Billie%20Eilish%20-%20Birds%20Of%20A%20Feather.jpeg" />
+          <div class="overlay">
+            <a href="https://music.youtube.com/watch?v=WKZO-CWeOVA&si=JxHZpwnKGIurJZXx" target="_blank">
+              <ion-icon name="logo-youtube"></ion-icon>
+            </a>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <img src="https://raw.githubusercontent.com/XELCIO/personal/refs/heads/main/src/Lauv%20-%20Mean%20It.jpeg" />
+          <div class="overlay">
+            <a href="https://music.youtube.com/watch?v=vTOFuTSFNAo&si=3AkT3A1UBy2c5Fbx" target="_blank">
+              <ion-icon name="logo-youtube"></ion-icon>
+            </a>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <img src="https://raw.githubusercontent.com/XELCIO/personal/refs/heads/main/src/Lany%20-%20Cause%20You%20Have%20To.jpeg" />
+          <div class="overlay">
+            <a href="https://music.youtube.com/watch?v=EeWIiVOdVk0&si=7j0JsxmdHxiXxL_2" target="_blank">
+              <ion-icon name="logo-youtube"></ion-icon>
+            </a>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <img src="https://raw.githubusercontent.com/XELCIO/personal/refs/heads/main/src/Lauv%20-%20Never%20Not.jpeg" />
+          <div class="overlay">
+            <a href="https://music.youtube.com/watch?v=KFBGKqxgAvk&si=Fj7DEGXqj00TCapC" target="_blank">
+              <ion-icon name="logo-youtube"></ion-icon>
+            </a>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <img src="https://raw.githubusercontent.com/XELCIO/personal/refs/heads/main/src/Dream%20Ft.%20Ivory%20-%20Welcome%20And%20Goodbye.jpeg" />
+          <div class="overlay">
+            <a href="https://music.youtube.com/watch?v=GaZLVPmViTg&si=Zx2dK5NJJ5RTsIPH" target="_blank">
+              <ion-icon name="logo-youtube"></ion-icon>
+            </a>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <img src="https://raw.githubusercontent.com/XELCIO/personal/refs/heads/main/src/Frank%20Ocean%20-%20White%20Ferrari.jpeg" />
+          <div class="overlay">
+            <a href="https://music.youtube.com/watch?v=Dlz_XHeUUis&si=a6yQlU5gbvMOWotu" target="_blank">
+              <ion-icon name="logo-youtube"></ion-icon>
+            </a>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <img src="https://raw.githubusercontent.com/XELCIO/personal/refs/heads/main/src/The%201975%20-%20Somebody%20Else.jpeg" />
+          <div class="overlay">
+            <a href="https://music.youtube.com/watch?v=ssF-hrwAHHc&si=EKAyPrbR5p1Yn5zN" target="_blank">
+              <ion-icon name="logo-youtube"></ion-icon>
+            </a>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <img src="https://raw.githubusercontent.com/XELCIO/personal/refs/heads/main/src/Charlie%20Puth%20-%20Cheating%20On%20You.jpeg" />
+          <div class="overlay">
+            <a href="https://music.youtube.com/watch?v=6vE42yJ9Wnk&si=LWpLG8JIkMEUtSYs" target="_blank">
+              <ion-icon name="logo-youtube"></ion-icon>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="music-player">
+    <h1>Title</h1>
+    <p>Song Name</p>
+
+    <audio id="song">
+      <source src="song-list/Luke-Bergs-Gold.mp3" type="audio/mpeg" />
+    </audio>
+
+    <input type="range" value="0" id="progress" />
+
+    <div class="controls">
+      <button class="backward">
+        <i class="fa-solid fa-backward"></i>
+      </button>
+      <button class="play-pause-btn">
+        <i class="fa-solid fa-play" id="controlIcon"></i>
+      </button>
+      <button class="forward">
+        <i class="fa-solid fa-forward"></i>
+      </button>
+    </div>
+  </div>
+  <footer id="footer">
+    <div class="col col1">
+      <p>Made with <span style="color: #BA6573;">❤</span> by Xelcio</p>
+      <div class="social">
+        <a href="https://codepen.io/Xelciolous" target="_blank" class="link"><img class="img-footer" src="https://assets.codepen.io/9051928/codepen_1.png" alt="Codepen" /></a>
+        <a href="https://t.me/xelcio" target="_blank" class="link"><img class="img-footer" src="https://raw.githubusercontent.com/XELCIO/personal/c271a1d556ba6a5818cb6087f3e3305cc418c70a/src/telegram.svg" alt="Telegram" /></a>
+        <a href="https://heylink.me/xelcio" target="_blank" class="link"><img class="img-footer" src="https://raw.githubusercontent.com/XELCIO/personal/c271a1d556ba6a5818cb6087f3e3305cc418c70a/src/contact.svg" alt="Contact" /></a>
+      </div>
+      <p style="color: #818181; font-size: smaller">2024 © All Rights Reserved</p>
+    </div>
+  </footer>
+  <script src="/v2/src/js/system.js"></script>
+</body>
+
+</html>
