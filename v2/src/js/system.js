@@ -8,44 +8,44 @@ const songName = document.querySelector(".music-player h1");
 const artistName = document.querySelector(".music-player p");
 const songs = [
   {
-    title: "Snooze",
-    name: "SZA",
-    source: "/music/SZA-Snooze.mp3"
+    title: "Birds Of A Feather",
+    name: "Billie Eilish",
+    source: "https://github.com/XELCIO/Personal-V2/raw/refs/heads/main/v2/src/music/BIRDS%20OF%20A%20FEATHER.mp3"
   },
   {
-    title: "Reminder",
-    name: "The Weeknd",
-    source: "/music/The Weeknd-Reminder.mp3"
+    title: "Mean It",
+    name: "Lauv & Lany",
+    source: "https://github.com/XELCIO/Personal-V2/raw/refs/heads/main/v2/src/music/Mean%20It.mp3"
   },
   {
-    title: "Cruel Summer",
-    name: "Taylor Swift",
-    source: "/music/Taylor Swift-Cruel Summer.mp3"
+    title: "Cause You Have To",
+    name: "Lany",
+    source: "https://github.com/XELCIO/Personal-V2/raw/refs/heads/main/v2/src/music/Cause%20You%20Have%20To.mp3"
   },
   {
-    title: "I Wanna Be Yours",
-    name: "Arctic Monkeys",
-    source: "/music/Arctic Monkeys-I Wanna Be Yours.mp3"
+    title: "Never Not",
+    name: "Lauv",
+    source: "https://github.com/XELCIO/Personal-V2/raw/refs/heads/main/v2/src/music/Never%20Not.mp3"
   },
   {
-    title: "Lover Stay",
-    name: "Pamungkas",
-    source: "/music/Pamungkas-Lover Stay.mp3"
+    title: "Welcome And Goodbye",
+    name: "Dream Ft. Ivory",
+    source: "https://github.com/XELCIO/Personal-V2/raw/refs/heads/main/v2/src/music/welcome%20and%20goodbye.mp3"
   },
   {
-    title: "Malibu Nights",
-    name: "LANY",
-    source: "/music/LANY-Malibu Nights.mp3"
+    title: "White Ferrari",
+    name: "Frank Ocean",
+    source: "https://github.com/XELCIO/Personal-V2/raw/refs/heads/main/v2/src/music/Frank%20Ocean%20-%20White%20Ferrari.mp3"
   },
   {
-    title: "Kiss It Better",
-    name: "Rihanna",
-    source: "/music/Rihanna-Kiss It Better.mp3"
+    title: "Somebody Else",
+    name: "The 1975",
+    source: "https://github.com/XELCIO/Personal-V2/raw/refs/heads/main/v2/src/music/The%201975%20-%20Somebody%20Else.mp3"
   },
   {
-    title: "Separuh Aku",
-    name: "Noah",
-    source: "/music/NOAH-Separuh Aku.mp3"
+    title: "Cheating On You",
+    name: "Charlie Puth",
+    source: "https://github.com/XELCIO/Personal-V2/raw/refs/heads/main/v2/src/music/Cheating%20on%20You.mp3"
   }
 ];
 let currentSongIndex = 3;
@@ -123,13 +123,70 @@ var swiper = new Swiper(".swiper", {
   }
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  const song = document.getElementById("song");
+particlesJS("particles-js", {
+  particles: {
+    number: {
+      value: 310,
+      density: {
+        enable: true,
+        value_area: 800
+      }
+    },
 
-  // Event listener untuk memunculkan pesan alert hanya saat lagu "Snooze" dimulai
-  song.addEventListener("play", function () {
-    if (song.src.includes("SZA-Snooze.mp3")) {
-      alert("Clue : A Boy In Love");
+    color: {
+      value: "#fff"
+    },
+
+    shape: {
+      type: "circle",
+      stroke: {
+        width: 0,
+        color: "#000000"
+      },
+
+      polygon: {
+        nb_sides: 5
+      }
+    },
+
+    opacity: {
+      value: 1,
+      random: false,
+      anim: {
+        enable: false,
+        speed: 1,
+        opacity_min: 0.1,
+        sync: false
+      }
+    },
+
+    size: {
+      value: 3,
+      random: true,
+      anim: {
+        enable: false
+      }
+    },
+
+    line_linked: {
+      enable: false
+    },
+
+    move: {
+      enable: true,
+      speed: 2,
+      direction: "bottom",
+      random: false,
+      straight: false,
+      out_mode: "out",
+      bounce: false,
+      attract: {
+        enable: false,
+        rotateX: 600,
+        rotateY: 1200
+      }
     }
-  });
+  },
+
+  retina_detect: true
 });
