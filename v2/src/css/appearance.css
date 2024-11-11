@@ -2,6 +2,8 @@
 
 :root {
   --primary-clr: rgba(228, 228, 229, 1);
+  --clr-text: hsl(0, 0%, 100%);
+  --m: 4rem;
 }
 
 * {
@@ -19,23 +21,16 @@ body {
   justify-content: center;
   min-height: 100vh;
   width: 100%;
-  background: url(https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/8727c9b1-be21-4932-a221-4257b59a74dd);
-  background-repeat: no-repeat;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  animation: slidein 120s forwards infinite alternate;
+  background: #222431;
+  padding: 40px 20px;
 }
 
-@keyframes slidein {
-  0%,
-  100% {
-    background-position: 20% 0%;
-    background-size: 3400px;
-  }
-  50% {
-    background-position: 100% 0%;
-    background-size: 2400px;
-  }
+/* Snow */
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }
 
 .album-cover {
@@ -60,9 +55,6 @@ body {
   height: 100%;
   border-radius: inherit;
   -webkit-box-reflect: below -5px linear-gradient(transparent, transparent, rgba(0, 0, 0, 0.4));
-  transform-origin: center;
-  transform: perspective(800px);
-  transition: 0.3s ease-out;
   pointer-events: none;
   user-select: none;
 }
@@ -74,7 +66,7 @@ body {
   position: absolute;
   inset: 0;
   width: 100%;
-  height: 98%;
+  height: 100%;
   background-color: rgba(28, 22, 37, 0.6);
   border-radius: inherit;
   opacity: 0;
@@ -181,4 +173,82 @@ body {
 
 .controls button:nth-child(2):is(:hover, :focus-visible) {
   transform: scale(1.25);
+}
+
+footer {
+  margin-top: 0vh;
+  z-index: 0;
+  width: 100%;
+  color: var(--clr-text);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  padding: 5rem 2vw;
+  position: relative;
+}
+
+footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -7;
+}
+
+.col {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: calc(0.3 * var(--m)) calc(0.8 * var(--m));
+  width: 28%;
+}
+
+.col2,
+.col3 {
+  background-color: rgba(189, 181, 181, 0.1);
+  border-radius: calc(0.5 * var(--m));
+}
+
+.img-footer {
+  height: calc(0.3 * var(--m));
+  object-fit: cover;
+}
+
+.social {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.link {
+  width: calc(0.8 * var(--m));
+  height: calc(0.8 * var(--m));
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: calc(0.1 * var(--m));
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 1000px) {
+  :root {
+    --m: 3rem;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  footer {
+    flex-direction: column;
+    padding: 5rem 20vw;
+  }
+  .col {
+    width: 100%;
+  }
 }
