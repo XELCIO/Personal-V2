@@ -76,7 +76,7 @@ function checkPassword(event) {
   if (password === correctPasswordA) {
     window.location.href = "../v2/main-page.html";
   } else if (password === correctPasswordB) {
-    window.location.href = "../Shine/secret-page.html";
+    window.location.href = "../Shine/shine.html";
   } else {
     alert("Password salah. Coba lagi.");
   }
