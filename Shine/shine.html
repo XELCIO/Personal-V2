@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0" />
+  <title>People Changes, and so do us.</title>
+  <meta name="description" content="For the better or worse, it's inevitable. Cheers to us." />
+  <link rel="icon" href="https://raw.githubusercontent.com/XELCIO/Personal-V2/main/assets/love-svgrepo-com.svg" />
+  <link rel="stylesheet" href="/Shine/src/css/play.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+</head>
+
+<body>
+  <div id="particles-js" class="snow"></div>
+  <div id="popupBox" class="popup-box full-width">
+    <style>
+      :root {
+        --clr-text: hsl(0, 0%, 100%);
+        --m: 4rem;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        -webkit-user-select: text;
+        user-select: text;
+      }
+
+      .popup-box {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 6;
+        border-radius: 18px;
+        background: #f3f4f5;
+        width: calc(100vw - 30px);
+        max-width: 580px;
+        padding: 0 18px 18px;
+      }
+
+      .popup-box.full-width {
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      .popup-box {
+        background: rgba(172, 172, 172, 0.2);
+        box-shadow: 2px 2px 10px 2px hsl(0, 0%, 0%, 0.25);
+        backdrop-filter: blur(10px);
+        border-radius: 10px;
+      }
+
+      .popup-content p {
+        color: #576271;
+      }
+
+      .mask {
+        background: rgba(0, 0, 0, 0.84);
+      }
+
+      .popup-title {
+        border-bottom-color: #576271;
+      }
+
+      .popup-title {
+        padding: 18px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        border-bottom: solid 1px #576271;
+        margin-bottom: 0;
+        min-height: 0;
+        text-align: center;
+        color: #4a251f;
+      }
+
+      .popup-img {
+        display: block;
+        width: 100%;
+      }
+
+      .btn-group {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 24px;
+        gap: 6px;
+      }
+
+      .popup-block .btn-group button {
+        max-width: 234px;
+      }
+
+      .btn-group button,
+      .btn-group a {
+        flex: 1;
+      }
+
+      .btn-submit {
+        text-shadow: 0 1px 1px rgba(0, 0, 0, 0.36);
+        background: rgba(248, 132, 169, 0.7);
+        ;
+      }
+
+      .btn-default,
+      .btn-join,
+      .btn-more,
+      .btn-submit,
+      .btn-cancel,
+      .btn-show-less,
+      .btn-login,
+      .btn-signup,
+      .btn-secondary,
+      .btn-quick {
+        line-height: 44px;
+        border-radius: 3px;
+        font-weight: 600;
+        text-align: center;
+        font-size: 0.8125rem;
+        padding: 0 10px;
+        cursor: pointer;
+        transition: all 0.2s ease-out;
+        font-size: large;
+        color: #fff;
+      }
+
+      button {
+        border: none;
+        background-color: transparent;
+        outline: none;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        cursor: pointer;
+        position: relative;
+      }
+    </style>
+    <div class="popup-title"></div>
+    <div class="popup-block">
+      <img class="popup-img" src="/assets/cat.webp" alt="hewwo" />
+      <div class="btn-group"><button class="btn-submit" onclick="hidePopupAndPlayMusic()">Konfirm</button></div>
+    </div>
+    <audio id="backgroundMusic" autoplay loop>
+      <source src="/Shine/src/music/Missing Pieces (Slowed).mp3" type="audio/mp3">
+      <!-- Sertakan format audio lain jika diperlukan -->
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+  <section>
+    <div class="recipe-container">
+      <h1>Projects</h1>
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <!--MUSIC PLAYER-->
+          <div class="swiper-slide post">
+            <img class="post-img" src="https://shots.codepen.io/username/pen/MWNvNzJ-320.webp?version=1732011760" alt="Music Player" />
+
+            <div class="post-body">
+              <img class="post-avatar" src="/assets/xelcio.jpeg" alt="Music Player" />
+              <div class="post-detail">
+                <h2 class="post-name" onclick="redirectToMusic()">Music Player</h2>
+                <p class="post-author">Reminds me of you</p>
+              </div>
+
+              <div class="post-actions">
+                <a class="post-like" href="javascript:void(0)"><i class="fas fa-heart"></i></a>
+                <button class="post-actions-controller" data-target="post0" aria-controls="post-actions-content" aria-expanded="false">
+                  <i class="fa-solid fa-ellipsis fa-2xl"></i>
+                </button>
+                <div class="post-actions-content" id="post0" data-visible="false" aria-hidden="true">
+                  <ul role="list" class="grid-flow" data-spacing="small">
+                    <li onclick="redirectToMusic()">
+                      <a class="post-actions-link" href="/Shine/music.html">
+                        <i class="fa-solid fa-gamepad"></i>
+                        <span>Play</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="post-actions-link" href="https://t.me/Xelcio">
+                        <i class="fa-solid fa-message"></i>
+                        <span>Report Bug/Error</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="post-actions-link" href="https://heylink.me/xelcio/">
+                        <i class="fa-solid fa-user-plus"></i>
+                        <span>Follow my socials</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!--GALLERY-->
+          <div class="swiper-slide post">
+            <img class="post-img" src="https://shots.codepen.io/username/pen/rNXzXbG-320.webp?version=1729555306" alt="Gallery" />
+
+            <div class="post-body">
+              <img class="post-avatar" src="/assets/xelcio.jpeg" alt="avatar" />
+              <div class="post-detail">
+                <h2 class="post-name" onclick="redirectToGallery()">Gallery</h2>
+                <p class="post-author">World finest art</p>
+              </div>
+
+              <div class="post-actions">
+                <a class="post-like" href="javascript:void(0)"><i class="fas fa-heart"></i></a>
+                <button class="post-actions-controller" data-target="post1" aria-controls="post-actions-content" aria-expanded="false">
+                  <i class="fa-solid fa-ellipsis fa-2xl"></i>
+                </button>
+                <div class="post-actions-content" id="post1" data-visible="false" aria-hidden="true">
+                  <ul role="list" class="grid-flow" data-spacing="small">
+                    <li onclick="redirectToGallery()">
+                      <a class="post-actions-link" href="/Shine/gallery.html">
+                        <i class="fa-solid fa-gamepad"></i>
+                        <span>Play</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="post-actions-link" href="https://t.me/Xelcio">
+                        <i class="fa-solid fa-message"></i>
+                        <span>Report Bug/Error</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="post-actions-link" href="https://heylink.me/xelcio/">
+                        <i class="fa-solid fa-user-plus"></i>
+                        <span>Follow my socials</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!--FLOWER-->
+          <div class="swiper-slide post">
+            <img class="post-img" src="https://shots.codepen.io/username/pen/rNXzXRz-320.jpg?version=1729555061" alt="Flowers" />
+
+            <div class="post-body">
+              <img class="post-avatar" src="/assets/xelcio.jpeg" alt="avatar" />
+              <div class="post-detail">
+                <h2 class="post-name" onclick="redirectToFlower()">Flower</h2>
+                <p class="post-author">Just a flower</p>
+              </div>
+
+              <div class="post-actions">
+                <a class="post-like" href="javascript:void(0)"><i class="fas fa-heart"></i></a>
+                <button class="post-actions-controller" data-target="post2" aria-controls="post-actions-content" aria-expanded="false">
+                  <i class="fa-solid fa-ellipsis fa-2xl"></i>
+                </button>
+                <div class="post-actions-content" id="post2" data-visible="false" aria-hidden="true">
+                  <ul role="list" class="grid-flow" data-spacing="small">
+                    <li onclick="redirectToFlower()">
+                      <a class="post-actions-link" href="/Shine/flower.html">
+                        <i class="fa-solid fa-gamepad"></i>
+                        <span>Play</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="post-actions-link" href="https://t.me/Xelcio">
+                        <i class="fa-solid fa-message"></i>
+                        <span>Report Bug/Error</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="post-actions-link" href="https://heylink.me/xelcio/">
+                        <i class="fa-solid fa-user-plus"></i>
+                        <span>Follow my socials</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!--Animation-->
+          <div class="swiper-slide post">
+            <img class="post-img" src="https://shots.codepen.io/username/pen/gOVNppw-320.webp?version=1732089555" alt="Animation" />
+
+            <div class="post-body">
+              <img class="post-avatar" src="/assets/xelcio.jpeg" alt="avatar" />
+              <div class="post-detail">
+                <h2 class="post-name" onclick="redirectToAnimation()">Animation</h2>
+                <p class="post-author">Silly animation</p>
+              </div>
+
+              <div class="post-actions">
+                <a class="post-like" href="javascript:void(0)"><i class="fas fa-heart"></i></a>
+                <button class="post-actions-controller" data-target="post5" aria-controls="post-actions-content" aria-expanded="false">
+                  <i class="fa-solid fa-ellipsis fa-2xl"></i>
+                </button>
+                <div class="post-actions-content" id="post5" data-visible="false" aria-hidden="true">
+                  <ul role="list" class="grid-flow" data-spacing="small">
+                    <li onclick="redirectToAnimation()">
+                      <a class="post-actions-link" href="/Shine/animation.html">
+                        <i class="fa-solid fa-gamepad"></i>
+                        <span>Play</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="post-actions-link" href="https://t.me/Xelcio">
+                        <i class="fa-solid fa-message"></i>
+                        <span>Report Bug/Error</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="post-actions-link" href="https://heylink.me/xelcio/">
+                        <i class="fa-solid fa-user-plus"></i>
+                        <span>Follow my socials</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!--SLIDERS-->
+          <div class="swiper-slide post">
+            <img class="post-img" src="https://raw.githubusercontent.com/XELCIO/personal/refs/heads/main/src/places-preview.jpeg" alt="Tower" />
+
+            <div class="post-body">
+              <img class="post-avatar" src="/assets/xelcio.jpeg" alt="avatar" />
+              <div class="post-detail">
+                <h2 class="post-name" onclick="redirectToSliders()">View</h2>
+                <p class="post-author">Places to go</p>
+              </div>
+
+              <div class="post-actions">
+                <a class="post-like" href="javascript:void(0)"><i class="fas fa-heart"></i></a>
+                <button class="post-actions-controller" data-target="post7" aria-controls="post-actions-content" aria-expanded="false">
+                  <i class="fa-solid fa-ellipsis fa-2xl"></i>
+                </button>
+                <div class="post-actions-content" id="post7" data-visible="false" aria-hidden="true">
+                  <ul role="list" class="grid-flow" data-spacing="small">
+                    <li onclick="redirectToSliders()">
+                      <a class="post-actions-link" href="/Shine/sliders/index.html">
+                        <i class="fa-solid fa-gamepad"></i>
+                        <span>Play</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="post-actions-link" href="https://t.me/Xelcio">
+                        <i class="fa-solid fa-message"></i>
+                        <span>Report Bug/Error</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="post-actions-link" href="https://heylink.me/xelcio/">
+                        <i class="fa-solid fa-user-plus"></i>
+                        <span>Follow my socials</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="swiper-scrollbar"></div>
+      </div>
+    </div>
+  </section>
+  <footer id="footer">
+    <div class="col col1">
+      <p>Made with <span style="color: #BA6573;">❤</span> by Xelcio</p>
+      <div class="social">
+        <a href="https://codepen.io/Xelciolous" target="_blank" class="link"><img class="img-footer" src="https://assets.codepen.io/9051928/codepen_1.png" alt="Codepen" /></a>
+        <a href="https://t.me/xelcio" target="_blank" class="link"><img class="img-footer" src="https://raw.githubusercontent.com/XELCIO/personal/c271a1d556ba6a5818cb6087f3e3305cc418c70a/src/telegram.svg" alt="Telegram" /></a>
+        <a href="https://heylink.me/xelcio" target="_blank" class="link"><img class="img-footer" src="https://raw.githubusercontent.com/XELCIO/personal/c271a1d556ba6a5818cb6087f3e3305cc418c70a/src/contact.svg" alt="Contact" /></a>
+      </div>
+      <p style="color: #D14D72; font-size: smaller">2024 © All Rights Reserved</p>
+    </div>
+  </footer>
+  <script src="/Shine/src/js/swipe.js"></script>
+</body>
+
+</html>

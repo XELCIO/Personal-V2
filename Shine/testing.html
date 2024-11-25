@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informasi Bank</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .popover {
+            z-index: 1050; /* Agar popover muncul di atas elemen lain */
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5" id="bank_info">
+        <h2 id="bank_info_name">Nama Bank</h2>
+        <div id="bank_info_logo" style="display: none;">
+            <img src="" alt="Logo Bank" id="bank_info_logo_img">
+        </div>
+        <div id="bank_info_account_number_container">
+            <h4 id="bank_info_account_no_header">Nomor Rekening:</h4>
+            <span id="bank_info_account_no">1234-5678-9012</span>
+            <button class="btn btn-primary copy_bank_account_button" type="button">Salin Nomor Rekening</button>
+        </div>
+        <input type="hidden" id="bank_info_account_no_hidden_input" value="123456789012">
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // JavaScript untuk menyalin ke clipboard
+        $(document).ready(function() {
+            $('.copy_bank_account_button').popover({
+                content: 'Nomor rekening telah disalin!',
+                placement: 'top',
+                trigger: 'manual'
+            });
+
+            $('.copy_bank_account_button').click(function() {
+                const accountNumber = $('#bank_info_account_no').text().replace(/-/g, '');
+                navigator.clipboard.writeText(accountNumber).then(() => {
+                    const button = $(this);
+                    button.popover('show');
+                    setTimeout(() => button.popover('hide'), 500);
+                }).catch(err => {
+                    console.log('Error when copying account number: ', err);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
