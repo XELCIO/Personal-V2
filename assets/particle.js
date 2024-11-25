@@ -70,7 +70,7 @@ function checkPassword(event) {
   event.preventDefault();
 
   var password = document.getElementById("passwordInput").value.toLowerCase(); // Ubah ke huruf kecil untuk mempermudah perbandingan
-  var correctPasswordA = "admin";
+  var correctPasswordA = "jennyfer";
   var correctPasswordB = "ariellequeensley";
 
   if (password === correctPasswordA) {
