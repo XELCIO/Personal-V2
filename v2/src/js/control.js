@@ -182,12 +182,8 @@ function redirectToTowerBlock() {
   window.location.href = "/v2/games/tower-block/index.html";
 }
 
-function redirectToSliders() {
-  window.location.href = "/others/sliders/index.html";
-}
-
 function redirectToMusic() {
-  window.location.href = "music-player.html";
+  window.location.href = "/v2/music-player-v2.html";
 }
 
 function showPopup() {
